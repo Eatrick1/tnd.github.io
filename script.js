@@ -26,6 +26,63 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Mobile nav: hamburger toggle, slides in from the left
+  var navToggle = document.querySelector(".nav-toggle");
+  var nav = document.getElementById("site-nav");
+  var navClose = document.querySelector(".nav-close");
+
+  if (navToggle && nav) {
+    var navBackdrop = document.createElement("div");
+    navBackdrop.className = "nav-backdrop";
+    document.body.appendChild(navBackdrop);
+
+    function openNav() {
+      nav.classList.add("open");
+      navToggle.classList.add("open");
+      navBackdrop.classList.add("open");
+      navToggle.setAttribute("aria-expanded", "true");
+      document.body.classList.add("nav-locked");
+    }
+
+    function closeNav() {
+      nav.classList.remove("open");
+      navToggle.classList.remove("open");
+      navBackdrop.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-locked");
+    }
+
+    navToggle.addEventListener("click", function () {
+      if (nav.classList.contains("open")) {
+        closeNav();
+      } else {
+        openNav();
+      }
+    });
+
+    if (navClose) {
+      navClose.addEventListener("click", closeNav);
+    }
+
+    navBackdrop.addEventListener("click", closeNav);
+
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeNav);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("open")) {
+        closeNav();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 820 && nav.classList.contains("open")) {
+        closeNav();
+      }
+    });
+  }
+
   // Background videos: play only while their section is on screen
   var bgVideos = document.querySelectorAll("video.bg-video");
   if (bgVideos.length && "IntersectionObserver" in window) {
