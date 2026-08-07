@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | TnD Adventures Ltd</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo-link">
+      <img src="assets/logo-mark.png" alt="TnD Adventures Ltd">
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav">
+      <button type="button" class="nav-close" aria-label="Close menu">&times;</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-media">
+    <img src="photos/murchison-falls-group.jpg" alt="Travelers and our guide at Murchison Falls, Uganda">
+  </div>
+  <div class="container">
+    <h1>Gallery</h1>
+    <p>Real photos from real trips: the parks we cover, the guides who lead them, and the travelers we've taken along the way.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-heading" data-reveal>
+      <div class="eyebrow">Browse By Category</div>
+      <h2>Moments from the road</h2>
+      <p>Filter by category or scroll through everything below. Click any photo to view it full-size.</p>
+    </div>
+
+    <div class="filter-tabs" data-reveal="1" role="tablist" aria-label="Filter gallery by category">
+      <button type="button" class="filter-tab active" data-filter="all">All Photos</button>
+      <button type="button" class="filter-tab" data-filter="wildlife">Wildlife &amp; Parks</button>
+      <button type="button" class="filter-tab" data-filter="falls">Murchison Falls</button>
+      <button type="button" class="filter-tab" data-filter="guides">Our Guides</button>
+      <button type="button" class="filter-tab" data-filter="travelers">Traveler Groups</button>
+    </div>
+
+    <!-- Wildlife & Parks -->
+    <div class="gallery-group" data-category="wildlife">
+      <div class="gallery-group-head">
+        <h3>Wildlife &amp; Parks</h3>
+        <span>5 photos</span>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="Bwindi Impenetrable Forest — home to over 400 mountain gorillas." data-reveal="1">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mountain_gorilla,_2-year-old,_Mubare_Group,_Buhoma,_Bwindi_Impenetrable_Forest,_Uganda.jpg" alt="Mountain gorilla in Bwindi Impenetrable Forest, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">Southwestern Uganda</div>
+            <h3>Bwindi Impenetrable Forest</h3>
+            <p>Home to over 400 mountain gorillas and our most requested trekking permits.</p>
+          </div>
+        </div>
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="Queen Elizabeth National Park — the Kazinga Channel and tree-climbing lions." data-reveal="2">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Queen_Elizabeth_national_Park.jpg" alt="Savanna landscape in Queen Elizabeth National Park, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">Western Uganda</div>
+            <h3>Queen Elizabeth NP</h3>
+            <p>Savanna, the Kazinga Channel, and some of the best game drives in the country.</p>
+          </div>
+        </div>
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="Kidepo Valley — remote savanna bordering South Sudan and Kenya." data-reveal="3">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A_landscape_of_Kidepo_National_Park_in_Uganda.jpg" alt="Landscape of Kidepo Valley National Park, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">Karamoja Region</div>
+            <h3>Kidepo Valley</h3>
+            <p>Remote savanna plains bordering South Sudan and Kenya, rarely crowded.</p>
+          </div>
+        </div>
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="Kibale Forest — the best chimpanzee trekking in Uganda." data-reveal="4">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/013_Alpha_male_chimpanzee_at_Kibale_forest_National_Park_Photo_by_Giles_Laurent.jpg" alt="Chimpanzee in Kibale Forest National Park, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">Western Uganda</div>
+            <h3>Kibale Forest</h3>
+            <p>Dense rainforest and the highest chimpanzee density of any East African park.</p>
+          </div>
+        </div>
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="Lake Mburo — Uganda's most accessible park for zebra." data-reveal="1">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Zebra_head.JPG" alt="Zebra in Lake Mburo National Park, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">Western Uganda</div>
+            <h3>Lake Mburo</h3>
+            <p>Uganda's most accessible park for zebra, and a common stop on the road west.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Murchison Falls -->
+    <div class="gallery-group" data-category="falls">
+      <div class="gallery-group-head">
+        <h3>Murchison Falls</h3>
+        <span>4 photos</span>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="Our guide with a traveler at the edge of Murchison Falls." data-reveal="1">
+          <img src="photos/guide-with-client-falls.jpg" alt="Our guide with a traveler at Murchison Falls, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">Northwestern Uganda</div>
+            <h3>At the Falls</h3>
+            <p>Standing where the Nile forces itself through a narrow, roaring gorge.</p>
+          </div>
+        </div>
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="Mist rising off Murchison Falls." data-reveal="2">
+          <img src="photos/guide-falls-mist.jpg" alt="Our guide photographing the mist at Murchison Falls, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">Northwestern Uganda</div>
+            <h3>Mist Off The Falls</h3>
+            <p>The spray reaches you well before the viewpoint does.</p>
+          </div>
+        </div>
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="A group at Murchison Falls with our guide." data-reveal="3">
+          <img src="photos/murchison-falls-group.jpg" alt="Our guide with travelers at Murchison Falls, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">Northwestern Uganda</div>
+            <h3>Group at the Falls</h3>
+            <p>A weekend group taking in the top-of-the-falls viewpoint.</p>
+          </div>
+        </div>
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="A family at the top of Murchison Falls." data-reveal="4">
+          <img src="photos/family-at-falls.jpg" alt="Travelers and our guide at the top of Murchison Falls, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">Northwestern Uganda</div>
+            <h3>Top of the Falls</h3>
+            <p>A short hike rewarded with the best view on the itinerary.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Guides -->
+    <div class="gallery-group" data-category="guides">
+      <div class="gallery-group-head">
+        <h3>Our Guides</h3>
+        <span>3 photos</span>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="One of our field guides." data-reveal="1">
+          <img src="photos/guide-portrait.jpg" alt="Portrait of one of our field guides, Uganda" style="object-position:center 20%;">
+          <div class="overlay">
+            <div class="place-eyebrow">Field Guide</div>
+            <h3>On Every Trip</h3>
+            <p>Licensed, experienced, and with you from arrival to departure.</p>
+          </div>
+        </div>
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="Our guide briefing a group before a game drive." data-reveal="2">
+          <img src="photos/guide-briefing-group.jpg" alt="Our guide briefing travelers at Murchison Falls viewpoint, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">Field Guide</div>
+            <h3>Briefing Before Every Stop</h3>
+            <p>What to expect, what to look out for, and how to stay safe.</p>
+          </div>
+        </div>
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="Our guide with a travel group after a day on safari." data-reveal="3">
+          <img src="photos/guide-group-selfie.jpg" alt="Our guide with a travel group after a day on safari, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">Field Guide</div>
+            <h3>End of a Good Day</h3>
+            <p>The kind of trip where the guide becomes part of the group.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Traveler Groups -->
+    <div class="gallery-group" data-category="travelers">
+      <div class="gallery-group-head">
+        <h3>Traveler Groups</h3>
+        <span>2 photos</span>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="A family group on tour with our guide." data-reveal="1">
+          <img src="photos/family-tour-group.jpg" alt="A family group on tour with our guide, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">Family &amp; Group Travel</div>
+            <h3>Family Safari</h3>
+            <p>Custom itineraries built around family schedules and interests.</p>
+          </div>
+        </div>
+        <div class="gallery-card lightbox-item" data-group="gallery-page" data-caption="Our fleet of safari vehicles ready for the road." data-reveal="2">
+          <img src="photos/team-safari-vans.jpg" alt="Our team and safari vehicles, Uganda">
+          <div class="overlay">
+            <div class="place-eyebrow">On The Road</div>
+            <h3>Our Fleet</h3>
+            <p>Reliable, well-maintained vehicles for the distances Uganda's parks demand.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-alt" style="text-align:center;">
+  <div class="container" data-reveal>
+    <h2 style="margin-bottom:14px;">Want photos like these from your own trip?</h2>
+    <p style="color:var(--gray); margin-bottom:26px;">Tell us your dates and interests, and we will put together an itinerary within a day.</p>
+    <a href="contact.html" class="btn">Plan Your Trip</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bg" aria-hidden="true">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mountain_gorilla,_2-year-old,_Mubare_Group,_Buhoma,_Bwindi_Impenetrable_Forest,_Uganda.jpg" alt="">
+    <img src="photos/team-safari-vans.jpg" alt="">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Queen_Elizabeth_national_Park.jpg" alt="">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A_landscape_of_Kidepo_National_Park_in_Uganda.jpg" alt="">
+  </div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="assets/logo-mark.png" alt="TnD Adventures Ltd">
+        <p>Guided safaris and custom adventure travel across Uganda, arranged by a team based in Kampala.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Kampala, Uganda, East Africa</li>
+          <li>+256 758 620 599</li>
+          <li>+256 782 930 167</li>
+          <li>tndadventuresug@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 TnD Adventures Ltd. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Gallery filter tabs — show/hide category groups without touching the shared lightbox script.
+  document.addEventListener("DOMContentLoaded", function () {
+    var tabs = document.querySelectorAll(".filter-tab");
+    var groups = document.querySelectorAll(".gallery-group");
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        tabs.forEach(function (t) { t.classList.remove("active"); });
+        tab.classList.add("active");
+
+        var target = tab.getAttribute("data-filter");
+        groups.forEach(function (group) {
+          var match = target === "all" || group.getAttribute("data-category") === target;
+          group.classList.toggle("is-hidden", !match);
+        });
+      });
+    });
+  });
+</script>
+</body>
+</html>

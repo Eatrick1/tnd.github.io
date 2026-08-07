@@ -34,7 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (navToggle && nav) {
     var navBackdrop = document.createElement("div");
     navBackdrop.className = "nav-backdrop";
-    document.body.appendChild(navBackdrop);
+    // Appended inside <header> (nav's own stacking context), not <body> —
+    // header is position:sticky with its own z-index, so a body-level
+    // backdrop would sit above the nav panel and swallow every tap on
+    // the menu links even though it visually looks like it's behind them.
+    var headerEl = nav.closest("header") || document.body;
+    headerEl.appendChild(navBackdrop);
 
     function openNav() {
       nav.classList.add("open");
