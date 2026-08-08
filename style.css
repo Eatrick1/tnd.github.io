@@ -201,20 +201,42 @@ img {
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.services-media img,
-.services-media video {
+/* Full section height is divided between a couple of photos, each covering
+   its own band completely (object-fit:cover on a sane, bounded height
+   rather than the whole section) — so the background fills edge to edge
+   with no solid gap, and a seam gradient blends one photo into the next. */
+.services-media .media-band {
+  position: relative;
+  flex: 1 1 0;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.services-media .media-band img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.services-media .media-band:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 12, 8, 0) 55%, rgba(10, 12, 8, 0.95) 100%);
 }
 
 .services-media::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 12, 8, 0.82) 0%, rgba(10, 12, 8, 0.7) 35%, rgba(10, 12, 8, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(8, 10, 6, 0.82) 0%, rgba(8, 10, 6, 0.78) 45%, rgba(8, 10, 6, 0.9) 100%);
 }
 
 .services-section .container {
@@ -222,8 +244,14 @@ img {
   z-index: 1;
 }
 
+.services-section .section-heading .eyebrow {
+  color: var(--orange);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
 .services-section .section-heading h2 {
   color: var(--white);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
 }
 
 .services-section .section-heading p {
@@ -238,7 +266,9 @@ img {
 
 .service-item {
   border-left: 3px solid var(--orange);
-  padding-left: 20px;
+  padding: 14px 18px;
+  background: rgba(8, 10, 6, 0.32);
+  backdrop-filter: blur(2px);
 }
 
 .service-item h3 {
@@ -1236,6 +1266,35 @@ footer > .container {
 .footer-grid p {
   font-size: 14px;
   color: #b9b9b9;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #4a4a4a;
+  color: #d9d9d9;
+  transition: border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease;
+}
+
+.social-links a:hover {
+  border-color: var(--orange);
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.social-links svg {
+  width: 17px;
+  height: 17px;
 }
 
 .footer-bottom {
