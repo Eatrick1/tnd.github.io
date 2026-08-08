@@ -207,4 +207,32 @@ document.addEventListener("DOMContentLoaded", function () {
       if (e.key === "ArrowLeft") renderSlide(activeIndex - 1);
     });
   }
+
+  // Basic photo protection: block right-click-save and drag-out on images.
+  // This is a deterrent for casual visitors only — it doesn't stop
+  // screenshots, browser dev tools, or view-source, so it isn't real DRM.
+  document.addEventListener("contextmenu", function (e) {
+    if (e.target.tagName === "IMG") e.preventDefault();
+  });
+  document.querySelectorAll("img").forEach(function (img) {
+    img.setAttribute("draggable", "false");
+  });
+
+  // Newsletter signup: front-end only for now. It validates the email and
+  // shows a confirmation, but nothing is actually sent or stored yet — it
+  // still needs to be connected to a real email service (e.g. Mailchimp,
+  // Formspree, Google Sheets via Zapier) before it collects subscribers.
+  var newsletterForm = document.getElementById("newsletter-form");
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var note = document.getElementById("newsletter-note");
+      var input = newsletterForm.querySelector("input[type='email']");
+      if (note) {
+        note.hidden = false;
+        note.textContent = "Thanks — " + input.value + " is on the list.";
+      }
+      newsletterForm.reset();
+    });
+  }
 });

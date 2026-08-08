@@ -414,7 +414,35 @@ nav a.active {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: kenburns 18s ease-out forwards;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation:
+    heroCrossfade 30s ease-in-out infinite,
+    kenburnsLoop 30s ease-in-out infinite;
+}
+
+.hero-slide:nth-child(1) { animation-delay: 0s, 0s; }
+.hero-slide:nth-child(2) { animation-delay: 6s, 6s; }
+.hero-slide:nth-child(3) { animation-delay: 12s, 12s; }
+.hero-slide:nth-child(4) { animation-delay: 18s, 18s; }
+.hero-slide:nth-child(5) { animation-delay: 24s, 24s; }
+
+@keyframes heroCrossfade {
+  0% { opacity: 0; }
+  3% { opacity: 1; }
+  18% { opacity: 1; }
+  23% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    animation: heroCrossfade 30s ease-in-out infinite;
+  }
 }
 
 .hero-media video {
@@ -689,8 +717,8 @@ section {
 }
 
 .team-avatar {
-  width: 52px;
-  height: 52px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1308,6 +1336,113 @@ footer > .container {
 /* Join Our Virtual Adventure */
 .virtual-adventure {
   background-color: var(--white);
+}
+
+/* Newsletter signup */
+.newsletter-section {
+  background-color: var(--cream);
+}
+
+.newsletter-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  background-color: var(--white);
+  border: 1px solid var(--light-gray);
+  padding: 40px;
+}
+
+.newsletter-box .newsletter-copy {
+  flex: 1 1 340px;
+}
+
+.newsletter-box h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.newsletter-box p {
+  color: var(--gray);
+  max-width: 460px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 360px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1 1 220px;
+  padding: 13px 16px;
+  border: 1.5px solid var(--light-gray);
+  font-family: inherit;
+  font-size: 14.5px;
+  min-width: 0;
+}
+
+.newsletter-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+
+.newsletter-form button {
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.newsletter-note {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--green-dark);
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .newsletter-box {
+    padding: 28px 22px;
+  }
+}
+
+/* Basic photo protection — deters casual right-click-save / drag-out
+   downloads. Not foolproof (screenshots, dev tools, and view-source
+   always work) but stops the easy path for most visitors. */
+img {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.gallery-card,
+.lightbox-content {
+  position: relative;
+}
+
+.gallery-card::before,
+.lightbox-content::before {
+  content: "\00a9 TnD Adventures Ltd";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.55);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+.lightbox-content::before {
+  right: 16px;
+  bottom: 16px;
+  font-size: 13px;
 }
 
 .va-showcase {
